@@ -1,0 +1,158 @@
+:root {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    width: min(42.5rem, 100%);
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
+
+a {
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* ===== CONTENT =====*/
+
+header {
+    height: 100vh;
+}
+
+nav {
+    height: 6rem;
+    padding-block: 1rem;
+    background-color: #000;
+}
+
+nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+#navigation ul {
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    width: 100%;
+    height: 0;
+    text-align: center;
+    visibility: hidden;
+    overflow-y: hidden;
+    transition: .3s;
+    background-color: #000;
+    z-index: 1;
+}
+
+#navigation ul li {
+    text-align: center;
+    padding: .5rem 1rem;
+}
+
+#navigation ul li a {
+    font-size: 1.6rem;
+    padding: .5rem;
+    transition: .2s ease-in;
+}
+
+#navigation ul li a:hover {
+    opacity: .6;
+}
+
+#navigation button {
+    display: flex;
+    padding: .8rem 1.6rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#hamburger {
+    width: 2.5rem;
+    border-top: .2rem solid #FFF;
+}
+
+#hamburger::after, #hamburger::before {
+    content: '';
+    display: block;
+    width: 2.5rem;
+    height: .2rem;
+    background-color: #FFF;
+    margin-top: .5rem;
+    transition: .3s;
+    position: relative;
+}
+
+#navigation.active > ul {
+    height: auto;
+    visibility: visible;
+    overflow-y: visible;
+}
+
+#navigation.active #hamburger {
+    border-top-color: transparent;
+}
+
+#navigation.active #hamburger::before {
+    transform: rotate(135deg);
+}
+
+#navigation.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -.7rem;
+}
+
+.banner {
+    height: calc(100vh - 6rem);
+    background-image: url('./banner.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+@media (min-width: 436px) {
+    .container {
+        width: min(124.8rem, 100%);
+    }
+
+    nav * {
+        visibility: visible;
+        overflow-y: visible;
+    }
+
+    #navigation {
+        display: flex;
+        align-items: center;
+    }
+
+    #navigation button {
+        display: none;
+    }
+
+    #navigation ul {
+        display: flex;
+        align-items: center;
+        position: initial;
+        width: 100%;
+        height: initial;
+    }
+}
