@@ -4,5 +4,4 @@
  Without static icons!
  <br>
  <br>
- Check my video 😉
- https://youtu.be/vojNQFiaxSE
+ Check my video: https://youtu.be/vojNQFiaxSE 😉
